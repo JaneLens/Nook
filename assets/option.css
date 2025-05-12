@@ -1,0 +1,267 @@
+@charset "utf-8";
+
+/* 基础变量定义 - 根据您提供的配色方案 */
+:root {
+  --content-padding: 1.5rem;      /* 左右内边距（移动端适配用） */
+  --bg-color: #f0eae2;           /* 浅色背景（米白） */
+  --card-color: #f9f5f0;         /* 卡片颜色 */
+  --text-color: #5A5A5A;         /* 正文颜色 */
+  --border-color: #d4ccc4;       /* 边框颜色 */
+  --primary-color: #f9f5f0;      /* 主色调 - 暖棕色 */
+  --secondary-color: #d4a373;    /* 次要色调 - 深一点暖棕色 */
+  --accent-color: #8c7b75;       /* 强调色 - 灰棕色 */
+  --success-color: #a7c4b5;     /* 成功色 - 柔和的绿色 */
+  --error-color: #d4a5a5;       /* 错误色 - 柔和的红色 */
+  --radius: 8px;                /* 圆角大小 */
+  --transition: all 0.3s ease;  /* 过渡效果 */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 按钮样式 */
+.typecho-option .backup_botton_green {
+  color: white;
+  background: var(--success-color);
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  border-radius: var(--radius);
+}
+
+.typecho-option .backup_botton_red {
+  color: white;
+  background: var(--error-color);
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  border-radius: var(--radius);
+}
+
+/* 卡片样式 */
+.card-style {
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 输入框和表单元素 */
+input[type=text],
+input[type=number],
+ul.token-input-list,
+.category-option ul,
+.upload-area, 
+textarea, 
+select, 
+#custom-field, 
+#custom-field input:not(#token-input-tags), 
+.w-50 a, 
+.btn {
+  list-style: none;
+  cursor: pointer;
+  border-radius: var(--radius) !important;
+  outline: thin solid var(--border-color);
+  height: auto;
+  background: var(--card-color);
+  color: var(--text-color);
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+input[type=text]:focus,
+input[type=number]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(200, 167, 151, 0.2);
+}
+
+input[type=text], 
+input[type=password], 
+input[type=email], 
+textarea {
+  width: 100%;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input#slug {
+  cursor: auto;
+  border: none !important;
+  background-color: var(--card-color);
+}
+
+.btn {
+  padding: 7px 12px;
+  background-color: var(--primary-color);
+  color: #5A5A5A;
+  border: none;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* 编辑器按钮样式 */
+#wmd-button-row {
+  height: auto;
+  background-color: var(--card-color);
+  padding: 8px;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+
+.wmd-button,
+.origin_btn {
+  margin: 0.2rem;
+  padding: 0.5rem !important;
+  border-radius: var(--radius) !important;
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.wmd-button:hover,
+.origin_btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.wmd-button svg,
+.origin_btn svg {
+  vertical-align: middle;
+}
+
+.wmd-edittab {
+  display: none;
+}
+
+.wmd-edittab a {
+  border: 1px dashed var(--border-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 20%;
+  color: var(--text-color);
+}
+
+#wmd-editarea {
+  word-break: break-all;
+  background-color: var(--card-color);
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  min-height: 200px;
+}
+
+/* 隐藏默认按钮 */
+#wmd-image-button,
+#wmd-link-button,
+#wmd-code-button,
+#wmd-spacer1,
+#btn-preview {
+  display: none;
+}
+
+.wmd-prompt-dialog {
+  border-radius: var(--radius);
+  outline: thin solid var(--border-color);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  max-width: calc(90vw - 20px);
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+select {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  height: auto !important;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235A5A5A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+}
+
+.characterblock span {
+  margin: 0.25rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  display: inline-block;
+  padding: 0 0.25rem;
+  cursor: pointer;
+  border-radius: 20% !important;
+  background-color: var(--card-color);
+  transition: var(--transition);
+}
+
+.characterblock span:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.option_gonggao .button {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.option_gonggao .button:hover {
+  background-color: var(--secondary-color);
+}
+
+.option_gonggao .text div {
+  border-bottom: 1px dashed rgba(165, 132, 132, 0.3);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.editor_emoji {
+  cursor: pointer;
+  margin: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.editor_emoji:hover {
+  transform: scale(1.2);
+}
+
+/* 添加一些动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.wmd-prompt-dialog {
+  animation: fadeIn 0.3s ease;
+}
+
+/* 内容区域限制宽度 */
+.container {
+  padding: 0 var(--content-padding);
+}
+
+.typecho-option-tabs li.current a, .typecho-option-tabs li.active a {
+    background-color: #f0eae2;
+}
+.typecho-list-table tr:hover,.wmd-button-row li:hover {
+    background-color: #f0eae2;
+}
