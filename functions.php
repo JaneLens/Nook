@@ -139,8 +139,6 @@ function themeConfig($form)
 }
 
 function themeFields($layout) {
-    ?>
-    <?
     if($_SERVER['SCRIPT_NAME']=="/admin/write-post.php"){
         $article_type= new Typecho_Widget_Helper_Form_Element_Radio('article_type',array('say' => _t('动态'),'note' => _t('文章'),'books' => _t('书单')),'say',_t('文章类型'),_t("选择文章类型首页输出"));
         $layout->addItem($article_type);
